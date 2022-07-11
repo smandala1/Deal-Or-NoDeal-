@@ -179,6 +179,8 @@ border-radius: 10px;
 	height: 50%;
 	font-size: 20px;
 	margin-top: 5%;
+	margin-left: auto;
+	margin-right: auto;
 }
 td{
 	border: 3px solid black;
