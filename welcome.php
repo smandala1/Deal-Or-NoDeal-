@@ -11,8 +11,8 @@
 		<?php Session_start();
 
 		if(isset($_POST['Register'])){
-			$username = $_POST['user'];
-			$password = $_POST['pass'];
+			$username = trim($_POST['user']);
+			$password = trim($_POST['pass']);
 			file_put_contents('users.txt', "\n$username,$password", FILE_APPEND);
 
 		}
