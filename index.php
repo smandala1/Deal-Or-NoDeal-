@@ -17,8 +17,9 @@
 		<strong>Password: </strong> <input type="password" name="pass">
 		<br>
 		<input type="submit" name="subBut" value="Login">
-		<a href="register.php"><input name="noAct" value="Register"></a>
+		
 		</form>
+		<a href= "register.php"><input type="submit"  value="Register"></a>
 			</div>
 		</div>
 	</body>

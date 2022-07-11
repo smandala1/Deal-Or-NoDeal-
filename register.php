@@ -17,7 +17,7 @@
 		<br>
 		<strong>Password: </strong> <input type="password" name="pass">
 		<br>
-		<a href= ""><input type="submit" name="Register" value="Register"></a>
+		<a href=""><input type="submit" name="Register" value="Register"></a>
 		</form>
 			</div>
 		</div>
