@@ -10,7 +10,6 @@
 		</div>
 		<?php Session_start();
 
-
 		if(isset($_POST['Register'])){
 			$username = $_POST['user'];
 			$password = $_POST['pass'];
@@ -24,11 +23,15 @@
 
 		foreach ($userfile as $key => $value) {
 			$line = explode(",", $userfile[$key]);
-
-			if( ($line[0] == $_POST['user']) && ($line[1] == $_POST['pass']))
+		 $saveduser = $line[0];
+		 $savedpass = $line[1];
+		 $currentuser = $_POST['user'];
+		 $currentpassword = $_POST['pass'];
+			if( (( trim($saveduser)  == $currentuser) && (trim($savedpass) == $currentpassword)))
 			{
 				$_SESSION['userid'] = $line[0];
 				$userfound = true;
+				break;
 			}
 		}
 

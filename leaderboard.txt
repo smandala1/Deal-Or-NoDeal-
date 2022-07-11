@@ -3,14 +3,12 @@
 2500,pope
 30000,money
 5000,youth
-
 122496,Michael
 122496,Michael
-0,
 152102,Michael
-0,
-0,
 73220,Michael
 0,empty
 0,empty
+0,empty
+100,test
 0,empty

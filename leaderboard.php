@@ -8,9 +8,11 @@
 	<body>
 		<?php
 		function generate_leaderboard($winningvalue , $currentuser){
+
 		$leaderboard = file('leaderboard.txt');
 
 		$index = 0;
+ 
 
 		foreach ($leaderboard as $key => $value) {
 			$line = explode(",", $value);
