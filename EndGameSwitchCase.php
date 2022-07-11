@@ -20,10 +20,18 @@
 
 	<div class="glass">
 		<div id="boxContainer">
+			<?php 
+			include("leaderboard.php");
+			?>
 			
 			<h1 id="amountwon"> YOU WON <br/> <?php foreach ($_SESSION['case_array'] as $key => $value) {
-				print $value;
+				$winningval = $value;
+				print $winningval;
 			}?> </h1>
+			<?php
+			$currentuser =  $_SESSION['username'];
+				generate_leaderboard($winningval , $currentuser);
+			?>
 		
 		</div>
 	</div>

@@ -112,14 +112,15 @@ $banker_rounds = (($_SESSION['turn'] == 5) || ($_SESSION['turn'] == 11) || ($_SE
 			print "</div>";
 		}
 		else if ($_SESSION['usercasenum'] == $i) {
+			$currentuser = $_SESSION['username'];
 			print "<div class=\"box\">";
-			print "<span class=\"boxNr\">User Case</span>";
+			print "<span class=\"boxNr\">$currentuser's Case</span>";
 			print "<span class=\"boxValue\"></span>";
 			print "</div>";
 		}
 		else{
 			print "<div class=\"chosencase\">";
-			print "<span class=\"boxNr\">Nothing</span>";
+			print "<span class=\"boxNr\">nothing</span>";
 			print "<span class=\"boxValue\"></span>";
 			print "</div>";
 		}
@@ -141,7 +142,7 @@ $banker_rounds = (($_SESSION['turn'] == 5) || ($_SESSION['turn'] == 11) || ($_SE
 			}
 		$_SESSION['bankeroffer'] = round($offer/(count($casearray) + 1));
 		print "<div id=\"button_box\">";
-		print "<a href=\"EndGame.php\"><button> DEAL</button></a>";
+		print "<a href=\"EndGameAcceptOffer.php\"><button> DEAL</button></a>";
 		print "<a href=\"caseselection.php\"><button>NO DEAL</button></a>";
 		print "</div>";
 
@@ -201,40 +202,8 @@ $banker_rounds = (($_SESSION['turn'] == 5) || ($_SESSION['turn'] == 11) || ($_SE
 <body>
 	<div id="Phpblock">
 		<?php
-
-
 		if ($_SESSION['turn'] == 0) {
-
-			$case_array = array(
-			'1' => 0.01, 
-			'2' => 5, 
-			'3' => 10, 
-			'4'=>25, 
-			'5'=>50, 
-			'6'=>100, 
-			'7'=>500 , 
-			'8'=>750, 
-			'9'=>1000, 
-			'10'=>2500, 
-			'11'=>5000, 
-			'12'=>7500, 
-			'13'=>10000, 
-			'14'=>15000, 
-			'15'=>25000, 
-			'16'=>50000,
-			'17'=>75000,
-			'18'=>100000,
-			'19'=>200000,
-			'20'=>200000,
-			'21'=>400000,
-			'22'=>500000,
-			'23'=>750000,
-			'24'=>1000000			
-						);
-
-			shuffle_cases($case_array);
-
-			$_SESSION['case_array'] = $case_array;
+			shuffle_cases($_SESSION['case_array']);
 
 			$usercase = $_POST['boxVal'];
 
@@ -243,15 +212,8 @@ $banker_rounds = (($_SESSION['turn'] == 5) || ($_SESSION['turn'] == 11) || ($_SE
 			$_SESSION['usercaseval'] = $case_array[$usercase];
 
 			assign_usercase($usercase, $_SESSION['case_array']);
-
-			printpost();
-			printsess();
+		
 		}
-		print $turn;
-		printpost();
-		printsess();
-
-
 
 		?>
 	</div>
@@ -272,21 +234,28 @@ $banker_rounds = (($_SESSION['turn'] == 5) || ($_SESSION['turn'] == 11) || ($_SE
 			$caseval = $_SESSION['prev_case_val'];
 			print "<p>Previous Case Selected: $casenum => $caseval</p>"	;
 			print "<p>Select a New Case</p>";
-			}elseif($_SESSION['turn'] == 27){
+			}elseif ($case_conditon) {
+				$_SESSION['prev_case'] = $_POST['boxVal'];
+			$casearray = $_SESSION['case_array'];
+			$casenum = $_POST['boxVal'];
+			$_SESSION['prev_case_val'] = $casearray[$casenum];
+			print "<p>Previous Case Selected: $casenum => $casearray[$casenum]</p>"	;
+			print "<p>Select a New Case</p>";
+			}
+			elseif($_SESSION['turn'] == 27){
 			$casenum = $_SESSION['prev_case'];
 			$caseval = $_SESSION['prev_case_val'];
 			print "<p>Previous Case Selected: $casenum => $caseval</p>";
 			print "<p> Choose to Keep or Switch Out Your Case </p>";
 
-
 			}
-			else{
+			else if($banker_rounds){
 			$_SESSION['prev_case'] = $_POST['boxVal'];
 			$casearray = $_SESSION['case_array'];
 			$casenum = $_POST['boxVal'];
 			$_SESSION['prev_case_val'] = $casearray[$casenum];
 			print "<p>Previous Case Selected: $casenum => $casearray[$casenum]</p>"	;
-			print "<p>Select a new case</p>";
+			print "<p>Deal Or No Deal</p>";
 
 
 			}	

@@ -20,8 +20,14 @@
 
 	<div class="glass">
 		<div id="boxContainer">
-			
-			<h1 id="amountwon"> YOU WON <br/> <?php print $_SESSION['usercaseval']; ?> </h1>
+			<?php 
+			include("leaderboard.php");
+			?>
+			<h1 id="amountwon"> YOU WON <br/> <?php $winningval = $_SESSION['usercaseval']; print $winningval; ?> </h1>
+			<?php
+			$currentuser =  $_SESSION['username'];
+				generate_leaderboard($winningval , $currentuser);
+			?>
 		
 		</div>
 	</div>

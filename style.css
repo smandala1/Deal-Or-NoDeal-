@@ -29,19 +29,67 @@ button {
 	
 }
 
+#Login_Header{
+	color: white;
+}
+
+#form_container{
+	margin-right: auto;
+	margin-left: auto;
+
+	font-size: x-large;
+}
+
+#form_box{
+	background-color: grey;
+	text-align: center;
+	width: 40%;
+	margin-top: 5%;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 10px;
+	padding: 10px;
+
+}
+
+#welmessagecon{
+	text-align: center;
+	background-color:black;
+	font-size: 30px;
+	color: white;
+	letter-spacing: 5px;
+	word-spacing: 10px;
+}
+#startgame{
+	text-align: center;
+	color: white;
+	font-size:  30px;
+	background-color: black;
+}
+
+#button{
+	text-align: center;
+	margin: 30px;
+	font-size: 30px;
+}
+
 #Phpblock{
 	background-color: white;
 	position: relative;
 }
 
 #banker_image{
-
 	width: 30%;
-
+	height: 50%;
+}
+#amountwon{
+	margin-top: 10%;
+	letter-spacing: 10px;
+	font-size: xx-large;
 }
 
 #offer{
-	color: gold;
+	color: #cca300;
 	letter-spacing: 5px;
 	font-weight: bold;
 	font-size: xx-large;
@@ -74,7 +122,6 @@ button {
 	background: black;
 	display: inline-block;
 	text-align: center;
-	transition: all 0.5s;
 	line-height: 8.5vh;
 	color: black;
 	font-weight: 900;
@@ -124,4 +171,15 @@ backdrop-filter: blur( 2px );
 border-radius: 10px;
 
 /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+}
+
+#leaderboard{
+	border: 3px solid black;
+	width: 40%;
+	height: 50%;
+	font-size: 20px;
+	margin-top: 5%;
+}
+td{
+	border: 3px solid black;
 }

@@ -1,0 +1,12 @@
+54000,hello
+6700,kyle
+2500,pope
+30000,money
+5000,youth
+
+122496,Michael
+122496,Michael
+0,
+152102,Michael
+0,
+0,
