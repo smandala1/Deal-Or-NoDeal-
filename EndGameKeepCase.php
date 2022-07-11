@@ -12,7 +12,7 @@
 
 <body>
 	<div id="logo">
-		<img class="logoImg" src="https://i.ibb.co/kKpRnSk/dealLogo.png">
+		<img class="logoImg" src="dealLogo.png">
 	</div>
 	<div id="Userprompt">
 		<p>Congratulations!!!</p>

@@ -220,7 +220,7 @@ $banker_rounds = (($_SESSION['turn'] == 5) || ($_SESSION['turn'] == 11) || ($_SE
 	
 
 	<div id="logo">
-		<img class="logoImg" src="https://i.ibb.co/kKpRnSk/dealLogo.png">
+		<img class="logoImg" src="dealLogo.png">
 	</div>
 
 	<div id="Userprompt">
